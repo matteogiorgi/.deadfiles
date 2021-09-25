@@ -1,2 +1,3 @@
-# .deadfiles
-old dotfiles
+# Deadfiles
+
+Old dotfiles I use no more.
