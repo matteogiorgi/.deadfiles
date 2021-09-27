@@ -282,6 +282,9 @@ nnoremap <silent><M-C-l>       :tabm +1<cr>
 
 
 
+" command! -nargs=1 ReplaceNormal execute '%s//<args>/gc'
+" command! -nargs=1 ReplaceVisual execute 's//<args>/gc'
+
 " remember to check ad set the default web-browser with:
 " xdg-settings get default-web-browser
 " xdg-settings set default-web-browser brave-browser.desktop

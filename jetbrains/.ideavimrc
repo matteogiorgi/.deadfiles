@@ -1,4 +1,8 @@
-" IDEAVIM CONF
+" Extensions installed in my jetbrains IDEs:
+"   - Dracula
+"   - Tabnine
+"   - IdeaVim
+
 
 set number relativenumber
 set highlightedyank
@@ -13,17 +17,4 @@ set textobj-indent
 set exchange
 set surround
 
-
-" INTELLIMACS CONF (follow instructions at https://github.com/MarcoIeni/intellimacs)
-
-source ~/.intellimacs/spacemacs.vim
-source ~/.intellimacs/extra.vim
-source ~/.intellimacs/major.vim
-source ~/.intellimacs/hybrid.vim
-source ~/.intellimacs/which-key.vim
-
 nnoremap Y y$
-nmap , <leader>m
-vmap , <leader>m
-nnoremap <leader>gl :action Vcs.Show.Log<CR>
-vnoremap <leader>gl :action Vcs.Show.Log<CR>
