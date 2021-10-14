@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Just a little script to keep my video-wallpapers organized
+
+list=$(ls)
+for file in $list; do
+    if [[ $file == "vid-rename" ]]; then
+		continue
+	fi
+    mv "$file" "_""$file";
+done
+
+list=$(ls)
+i=0
+for file in $list; do
+    if [[ $file == "vid-rename" ]]; then
+		continue
+	fi
+    suffix=${file##*.}
+    if [[ $suffix == "gif" ]]; then
+        if [[ $i -lt 10  ]]; then
+            ffmpeg -i "$file" -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" "vid_0""$i"".mp4";
+        else
+            ffmpeg -i "$file" -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" "vid_""$i"".mp4";
+        fi
+        rm "$file"
+        ((i++))
+        continue
+    fi
+    if [[ $i -lt 10  ]]; then
+        mv "$file" "vid_0""$i"."$suffix";
+    else
+        mv "$file" "vid_""$i"."$suffix";
+    fi
+    ((i++))
+done
+
