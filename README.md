@@ -1,3 +1,3 @@
 # Deadfiles
 
-Old dotfiles I use no more.
+Minor dotfiles I use no more. Still perfectly functional thow.

@@ -1,14 +1,14 @@
-# AMP EDITOR
+# AMP
 /amp/.config/amp/syntaxes/*
 
-# MICRO EDITOR
+# MICRO
 /micro/.config/micro/backups/*
 /micro/.config/micro/buffers/*
 
-# QTILE WINDOW MANAGER
+# QTILE
 /qtile/.config/qtile/__pycache__/*
 
-# RANGER FILE MANAGER
+# RANGER
 /ranger/.config/ranger/__pycache__/*
 /ranger/.config/ranger/plugins/__pycache__/*
 /ranger/.config/ranger/plugins/__init__.py
