@@ -1,7 +1,8 @@
 config.load_autoconfig(False)
 
 c.fonts.default_family = ['mononoki Nerd Font']
-c.fonts.default_size = '10pt'
+c.fonts.default_size = '9pt'
+c.confirm_quit = ['multiple-tabs']
 
 # Bindings for normal mode
 config.bind('xb', 'config-cycle statusbar.hide true false')
