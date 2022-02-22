@@ -13,6 +13,9 @@
 /ranger/.config/ranger/plugins/ranger-devicons/__pycache__/*
 /ranger/.config/ranger/plugins/ranger-gitplug/__pycache__/*
 
+# VIFM
+/vifm/.config/vifm/vifminfo*
+
 # QUTEBROWSER
 /qutebrowser/.config/qutebrowser/bookmarks/*
 /qutebrowser/.config/qutebrowser/greasemonkey/*

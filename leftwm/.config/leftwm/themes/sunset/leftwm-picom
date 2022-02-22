@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+
+if [[ -x "$(command -v picom)" ]]; then
+    killall -q picom
+    while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
+    picom --daemon --experimental-backends &
+fi
