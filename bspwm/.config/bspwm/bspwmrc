@@ -1,6 +1,7 @@
-#! /bin/sh
+#!/usr/bin/env bash
 
 export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+MONITOR=1 && [[ $(xrandr --query | grep " connected" | cut -d" " -f1 | wc -l) -eq 1 ]] && MONITOR=0
 
 
 
@@ -11,13 +12,11 @@ export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 bspc config border_radius                 0
 bspc config border_width                  1
 bspc config window_gap                    10
-bspc config -m eDP1 top_padding           20
-bspc config -m HDMI1 top_padding          0
 bspc config bottom_padding                0
 bspc config left_padding                  0
 bspc config right_padding                 0
 bspc config single_monocle                false
-bspc config click_to_focus                false
+bspc config click_to_focus                true
 bspc config split_ratio                   0.50
 bspc config borderless_monocle            true
 bspc config gapless_monocle               true
@@ -46,6 +45,14 @@ bspc config urgent_border_color   "#ff6e6e"
 
 
 
+## SPECIFIC LAYOUTS
+###################
+
+bspc rule -a Zathura state=tiled
+
+
+
+
 ## KEYLAYOUT
 ############
 
@@ -55,56 +62,11 @@ xmodmap ~/.Xmodmap
 
 
 
-## MONITORS
-###########
+## SXHKD, MONITORS, POLYBAR, WALLPAPER, PICOM, SYSICONS
+#######################################################
 
-if [[ $(xrandr -q | grep 'eDP1 connected') ]]; then
-    bspc monitor eDP1 -d 1 2 3 4 5 6 7 8 9 0
-fi
-
-if [[ $(xrandr -q | grep 'HDMI1 connected') ]]; then
-    xrandr --output eDP1 --primary --mode 1920x1080 --rotate normal --output HDMI1 --mode 1280x1024 --rotate normal --left-of eDP1
-    bspc monitor HDMI1 -d 1 2 3 4 5 6 7 8 9 0
-fi
-
-
-
-
-## WALLPAPER
-############
-
-if [ -x "$(command -v feh)" ]; then
-    FILE=/etc/resolv.conf
-    if [ -f ~/.fehbg ]; then
-        ~/.fehbg
-    else
-        feh --bg-fill --no-fehbg $SCRIPTPATH/background.jpg
-    fi
-fi
-
-
-
-
-## CONNECTIONS
-##############
-
-[[ -x "$(command -v nm-applet)" ]] && nm-applet &
-[[ -x "$(command -v blueman-applet)" ]] && blueman-applet &
-
-
-
-
-## KEYBINDS, PICOM, POLYBAR
-###########################
-
-./bspreload --sxhkd
-./bspreload --picom
-./bspreload --polybar
-
-
-
-
-## SPECIFIC LAYOUTS
-###################
-
-bspc rule -a Zathura state=tiled
+$SCRIPTPATH/bspwm-sxhkd
+$SCRIPTPATH/bspwm-polybar $($SCRIPTPATH/bspwm-monitor)
+$SCRIPTPATH/bspwm-picom $MONITOR
+$SCRIPTPATH/bspwm-wallpaper
+$SCRIPTPATH/bspwm-sysicons

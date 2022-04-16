@@ -1,0 +1,66 @@
+{
+    "keyboard.dispatch": "keyCode",
+    "window.menuBarVisibility": "toggle",
+    "editor.fontFamily": "'mononoki Nerd Font', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.cursorBlinking": "solid",
+    "editor.cursorStyle": "block",
+    "editor.guides.indentation": false,
+    "editor.folding": false,
+    "editor.minimap.enabled": false,
+    "editor.renderLineHighlight": "none",
+    "editor.lineNumbers": "relative",
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.horizontalScrollbarSize": 0,
+    "editor.scrollbar.vertical": "hidden",
+    "editor.scrollbar.verticalScrollbarSize": 0,
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Default Light+",
+    "workbench.editor.showTabs": false,
+    "workbench.activityBar.visible": false,
+    "vim.easymotion": true,
+    "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        {
+            "before": [
+                ","
+            ],
+            "commands": [
+                "vspacecode.space",
+                {
+                    "command": "whichkey.triggerKey",
+                    "args": "m"
+                }
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        {
+            "before": [
+                ","
+            ],
+            "commands": [
+                "vspacecode.space",
+                {
+                    "command": "whichkey.triggerKey",
+                    "args": "m"
+                }
+            ]
+        }
+    ]
+}

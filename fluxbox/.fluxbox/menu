@@ -1,0 +1,16 @@
+[begin] (FLUXBOX)
+[encoding] {UTF-8}
+	[exec] (Run..) {launch2}
+	[exec] (Terminal) {x-terminal-emulator}
+	[exec] (Browser) {x-www-browser}
+	[restart] (Reload)
+	[nop]
+	[submenu] (Exit) {EXIT}
+		[exit] (Logout)
+		[exec] (Sleep) {systemctl suspend}
+		[exec] (Hibernate) {systemctl hibernate}
+		[exec] (Reboot) {systemctl reboot}
+		[exec] (Poweroff) {systemctl poweroff}
+	[end]
+[endencoding]
+[end]

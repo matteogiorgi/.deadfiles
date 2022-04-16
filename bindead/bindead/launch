@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+DIR=$(echo $PATH | tr ':' '\n')
+Menu="$(/usr/bin/ls -a $DIR | uniq -u | fzf --prompt="Run : " --border=rounded --margin=5% --color=dark --height 100% --reverse --info=hidden --header-first)" 
+exec xhide $Menu
