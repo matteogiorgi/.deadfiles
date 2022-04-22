@@ -2,6 +2,9 @@
 /micro/.config/micro/backups/*
 /micro/.config/micro/buffers/*
 
+# BROOT
+/broot/.config/broot/launcher/*
+
 # QTILE
 /qtile/.config/qtile/__pycache__/*
 

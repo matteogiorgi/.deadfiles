@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+MONITOR=2 && [[ $(xrandr --query | grep " connected" | cut -d" " -f1 | wc -l) -eq 1 ]] && MONITOR=1
+
+if [[ -x "$(command -v dzen2)" ]]; then
+    killall -q dzen2
+    while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+    $SCRIPTPATH/panel.sh -xs $MONITOR &
+fi
