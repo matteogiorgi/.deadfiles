@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+
+TERM="alacritty"
+
+case "$1" in
+	term-1)
+        entry="$TERM -t term-1 -e zsh"
+        ;;
+	term-2)
+        entry="$TERM -t term-2"
+        ;;
+esac
+
+xdotool search --onlyvisible --name "$1" windowunmap \
+    || xdotool search --name "$1" windowmap \
+    || $entry &
