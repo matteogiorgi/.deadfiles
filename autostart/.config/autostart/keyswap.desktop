@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=KeySwap
+GenericName=KeySwapper
+Comment=Swap Esc and CapsLk keys
+Type=Application
+Terminal=false
+Exec=xmodmap /home/geoteo/.Xmodmap
+X-GNOME-Autostart-enabled=true
