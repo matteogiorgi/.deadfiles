@@ -1,0 +1,10 @@
+# BIN
+/bin/.local/share/man/man1/ipython.1.gz
+
+# VIM
+/vim/.vim-viminfo-local
+/vim/.vim/.netrwhist
+/vim/.vim/plugged/*
+/vim/.vim/undodir/*
+/vim/.vim/cache/*
+/vim/.vim/sessions/*

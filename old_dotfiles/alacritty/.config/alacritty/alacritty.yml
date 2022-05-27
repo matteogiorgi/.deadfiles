@@ -1,0 +1,72 @@
+# Configuration for Alacritty,
+# the GPU enhanced terminal emulator.
+
+
+env:
+    TERM: xterm-256color
+
+
+window:
+    padding:
+        x: 6
+        y: 6
+    title: Alacritty
+    class:
+        instance: Alacritty
+        general: Alacritty
+
+
+scrolling:
+    history: 5000
+
+
+font:
+    normal:
+        family: mononoki Nerd Font
+        style: Regular
+    bold:
+        family: mononoki Nerd Font
+        style: Bold
+    italic:
+        family: mononoki Nerd Font
+        style: Italic
+    bold_italic:
+        family: mononoki Nerd Font
+        style: Bold Italic
+    size: 8.5
+    offset:
+        x: 0
+        y: 0
+    glyph_offset:
+        x: 0
+        y: 0
+
+
+colors:
+    primary:
+        background: '0xFFFFFF'
+        foreground: '0x171421'
+    normal:
+        black: '0x171421'
+        red: '0xC01C28'
+        green: '0x26A269'
+        yellow: '0xA2734C'
+        blue: '0x12488B'
+        magenta: '0xA347BA'
+        cyan: '0x2AA1B3'
+        white: '0xD0CFCC'
+    bright:
+        black: '0x5E5C64'
+        red: '0xF66151'
+        green: '0x33D17A'
+        yellow: '0xE9AD0C'
+        blue: '0x2A7BDE'
+        magenta: '0xC061CB'
+        cyan: '0x33C7DE'
+        white: '0xFFFFFF'
+
+
+window.opacity: 1.00
+
+shell:
+    program: /bin/zsh
