@@ -1,0 +1,24 @@
+.
+.TH kilo "1" "June 2022" "kilo" "User Commands"
+.SH NAME
+kilo \- text editor
+.SH SYNOPSIS
+.B kilo
+.SH DESCRIPTION
+A simple text editor written in C.
+.PP
+.SH "Usage"
+.
+.nf
+
+Kilo is a small text editor in less than 1K lines of code (counted with cloc).
+It does not depend on any library (not even curses) and uses fairly standard
+VT100 (and similar terminals) escape sequences.
+
+Usage:
+    kilo <filename>
+
+Keys:
+    Ctrl-s : save
+    Ctrl-q : quit
+    Ctrl-f : find string (esc to exit, arrows to navigate)

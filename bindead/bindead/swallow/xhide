@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+
+### just open
+#############
+
+if [[ $* == *--spit* ]]; then
+    sh -c "$*" & disown >/dev/null 2>&1
+    exit 0
+fi
+
+
+### open and swallow
+####################
+
+id=$(xdo id)
+xdo hide
+sh -c "$*" >/dev/null 2>&1
+xdo show "$id"

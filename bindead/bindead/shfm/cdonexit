@@ -1,0 +1,7 @@
+#!/bin/bash
+
+function _shfm () {
+    ~/bin/shfm/shfm "$@"
+    cd "$(cat ~/.shfm.tmp)"
+    rm -f ~/.shfm.tmp
+}
